@@ -1,0 +1,22 @@
+{
+  "name": "checkup-skill",
+  "version": "1.0.0",
+  "description": "Skill de auditoria de segurança de SaaS no padrão Google Antigravity, baseada no vídeo do Mano Deyvin",
+  "main": "SKILL.md",
+  "scripts": {
+    "test:report": "python scripts/generate_report.py --sample",
+    "install:global": "powershell -Command \"New-Item -ItemType Junction -Path \\\"$HOME\\.gemini\\config\\skills\\security-audit\\\" -Target $PWD -Force\""
+  },
+  "keywords": [
+    "antigravity",
+    "skill",
+    "security-audit",
+    "saas-security",
+    "idor",
+    "rls",
+    "mano-deyvin"
+  ],
+  "author": "Mano Deyvin / Antigravity Community",
+  "license": "MIT"
+}
+

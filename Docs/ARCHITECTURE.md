@@ -38,7 +38,7 @@ A skill `security-audit` foi projetada para atuar como um auditor sênior de seg
 ## 4. Estrutura de Diretórios
 - `SKILL.md`: Instrução mestra acionada pelo agente, com regras metodológicas e fluxo operacional.
 - `references/`: Manuais conceituais e catálogos de vulnerabilidade por stack (`vulnerability-catalog.md`, `pdf-design-system.md`).
-- `resources/`: Esquemas de dados e templates de issues (`report-data-schema.json`, `issue-template.md`).
+- `resources/`: Esquemas de validação de dados (`report-data-schema.json`, `sample-audit-data.json`).
 - `scripts/`: Scripts executáveis para geração de relatórios isolados em Python (`generate_report.py`).
 - `Docs/`: Documentação de engenharia e governança da própria skill.
 

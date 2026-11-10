@@ -6,15 +6,17 @@ Este documento mapeia todos os arquivos do projeto, sua finalidade, dependência
 
 ## 1. Núcleo da Skill
 - **`SKILL.md`**
-  - **Finalidade:** Arquivo principal de definição da skill no padrão Antigravity. Contém frontmatter YAML (`name`, `description`), protocolo de detecção de stack, procedimentos de varredura das 5 categorias, regras metodológicas e instruções para geração do relatório PDF e issues para GitHub.
+  - **Finalidade:** Arquivo principal de definição da skill no padrão Antigravity. Contém frontmatter YAML (`name`, `description`), protocolo de detecção de stack, procedimentos de varredura das 5 categorias, regras metodológicas e instruções para geração do relatório PDF executivo e diagnóstico no chat.
   - **Dependências / Referências:**
     - Consulta `references/vulnerability-catalog.md` para padrões por stack.
     - Consulta `references/pdf-design-system.md` para diretrizes de layout e cores.
     - Utiliza `scripts/generate_report.py` para geração do PDF executivo.
-    - Baseia-se no template `resources/issue-template.md`.
 
-- **`prompt.md`**
-  - **Finalidade:** Arquivo original de especificação fornecido pelo usuário, preservado como referência histórica do escopo de requisitos.
+- **`README.md`**
+  - **Finalidade:** Manual principal de apresentação da skill, guia de instalação global (`~/.gemini/config/skills/security-audit`), instruções de instalação via IA/NPM/Terminal e créditos ao Mano Deyvin.
+
+- **`package.json`**
+  - **Finalidade:** Manifesto do pacote Node.js com scripts auxiliares de teste e comando de instalação global via npm.
 
 ---
 
@@ -31,16 +33,12 @@ Este documento mapeia todos os arquivos do projeto, sua finalidade, dependência
 
 ## 3. Recursos (`resources/`)
 - **`resources/report-data-schema.json`**
-  - **Finalidade:** Schema JSON estruturado que padroniza os dados coletados na auditoria (metadados do projeto, resumo estatístico, pontos fortes, achados detalhados, recomendações e issues).
+  - **Finalidade:** Schema JSON estruturado que padroniza os dados coletados na auditoria (metadados do projeto, resumo estatístico, pontos fortes, achados detalhados e recomendações).
   - **Usado por:** `scripts/generate_report.py` para carregar dados de entrada.
 
 - **`resources/sample-audit-data.json`**
   - **Finalidade:** Conjunto de dados de exemplo representativos para teste e demonstração imediata do gerador de PDF.
   - **Usado por:** `scripts/generate_report.py`.
-
-- **`resources/issue-template.md`**
-  - **Finalidade:** Modelo padronizado para as issues do GitHub, contendo título, labels, descrição, evidência com linha/código, impacto, mitigação e critérios de aceite.
-  - **Usado por:** `SKILL.md` e `scripts/generate_report.py`.
 
 ---
 
@@ -48,22 +46,15 @@ Este documento mapeia todos os arquivos do projeto, sua finalidade, dependência
 - **`scripts/generate_report.py`**
   - **Finalidade:** Script standalone em Python capaz de orquestrar a geração do relatório em PDF usando ReportLab e Matplotlib em ambiente virtual temporário/isolado, respeitando a paleta e os padrões estéticos definidos.
   - **Entrada:** Arquivo JSON aderente ao `report-data-schema.json`.
-  - **Saída:** Arquivo PDF salvo em `docs/security-audit/relatorio-auditoria-seguranca.pdf`.
+  - **Saída:** Arquivo PDF salvo no caminho indicado (por padrão `docs/security-audit/relatorio-auditoria-seguranca.pdf`).
 
 ---
 
-## 5. Artefatos de Saída e Auditoria (`docs/security-audit/`)
-- **`docs/security-audit/relatorio-auditoria-seguranca.pdf`**: Relatório executivo gerado em PDF com 5 páginas, gráficos e tabelas.
-- **`docs/security-audit/audit_data.json`**: Cópia local dos dados estruturados da auditoria.
-- **`docs/security-audit/generate_report.py`**: Cópia local do script gerador para regerar o relatório de forma autônoma.
-
----
-
-## 6. Governança e Documentação (`Docs/`)
+## 5. Governança e Configurações
 - **`Docs/ARCHITECTURE.md`**: Visão geral de arquitetura, fluxo de dados e princípios da skill.
 - **`Docs/FILE_MAP.md`**: Este mapa de arquivos e referências cruzadas.
 - **`Docs/MODULES.md`**: Detalhamento funcional de cada módulo, classe e função.
 - **`Docs/CHANGELOG.md`**: Histórico cronológico de mudanças do projeto.
 - **`Docs/DECISIONS.md`**: Registros de decisões arquiteturais (ADR).
 - **`.gitignore`**: Configuração de exclusão de artefatos temporários e ambientes virtuais locais (`.venv_audit`).
-
+- **`.gitattributes`**: Normalização de quebras de linha para controle de versão.

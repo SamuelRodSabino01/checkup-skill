@@ -59,8 +59,8 @@ Este documento detalha as funções, regras operacionais e estruturas dos compon
 
 - **`resources/report-data-schema.json`**:
   - Valida o payload de dados coletados para assegurar que o gerador de PDF receba todos os campos necessários.
-- **`resources/issue-template.md`**:
-  - Define o formato canônico de cada issue a ser aberta no repositório.
+- **`resources/sample-audit-data.json`**:
+  - Conjunto de dados representativos para teste de carga e geração demonstrativa do PDF.
 - **`references/vulnerability-catalog.md`**:
   - Base de conhecimento com sintaxes reais por framework para aceleração de diagnóstico pelo auditor.
 - **`references/pdf-design-system.md`**:

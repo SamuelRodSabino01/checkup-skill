@@ -4,6 +4,28 @@ Todas as modificações notáveis neste projeto serão documentadas neste arquiv
 
 ---
 
+## [1.3.0] - 2026-11-09
+
+### Adicionado
+- Criação e expansão de `README.md` com destaque aos créditos ao **Mano Deyvin** ([Canal YouTube](https://www.youtube.com/@manodeyvin) e [Vídeo de Referência](https://youtu.be/mjSOFCDV_wA)).
+- Inclusão de guia completo de instalação: via IA (prompt copy-paste), via NPM/NPX e via Terminal (PowerShell e Bash).
+- Adição de `package.json` com scripts de teste e instalação global automatizada.
+
+---
+
+## [1.2.0] - 2026-11-09
+
+### Adicionado
+- Instalação global da skill via Directory Junction em `~/.gemini/config/skills/security-audit`, permitindo acionamento em qualquer workspace do ambiente local.
+
+### Removido
+- Removido `prompt.md` (especificação inicial convertida integralmente na skill).
+- Removido `resources/issue-template.md` (template de issues tornado obsoleto pelo fluxo direto).
+- Removido `docs/security-audit/` (artefatos de teste e amostra limpos para preservar a raiz da skill).
+- Removido `scripts/.venv_audit/` (ambiente virtual temporário de testes desnecessário no repositório).
+
+---
+
 ## [1.1.0] - 2026-11-09
 
 ### Modificado
