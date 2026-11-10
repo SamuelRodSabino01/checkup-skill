@@ -34,3 +34,19 @@ Este registro adota o padrão Architecture Decision Records (ADR). Consulte este
   - Atendimento total à restrição de segurança e isolamento.
   - Relatório reproduzível a qualquer momento em ambientes locais ou de CI.
 
+---
+
+## ADR 003: Simplificação do Fluxo e Remoção de Issues para GitHub para Uso Próprio
+
+- **Data:** 2026-11-09
+- **Status:** Aceito
+- **Contexto:**
+  O autor/desenvolvedor utilizará a skill diretamente em seus próprios projetos, tornando desnecessária a sobrecarga de gerar blocos formatados de issues para abertura delegada no GitHub. O foco deve ser o diagnóstico imediato no chat e o relatório executivo em PDF com as recomendações de remediação.
+- **Decisão:**
+  1. Remover a exigência da etapa de geração de issues do GitHub do protocolo de `SKILL.md`.
+  2. Ajustar o script `scripts/generate_report.py` para encerrar o PDF na seção de Recomendações Priorizadas, reduzindo o documento para 4 páginas densas e de leitura rápida.
+  3. Atualizar os schemas e referências mantendo a consistência do ecossistema.
+- **Consequências:**
+  - Redução no consumo de tokens e tempo de geração.
+  - Relatório PDF mais direto e focado na atuação técnica imediata.
+

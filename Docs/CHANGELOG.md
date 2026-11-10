@@ -4,6 +4,14 @@ Todas as modificações notáveis neste projeto serão documentadas neste arquiv
 
 ---
 
+## [1.1.0] - 2026-11-09
+
+### Modificado
+- Remoção da geração obrigatória de blocos de issues para o GitHub em `SKILL.md`, `scripts/generate_report.py`, `resources/report-data-schema.json` e `references/pdf-design-system.md`.
+- Foco exclusivo no diagnóstico factual linha a linha no chat e no relatório executivo em PDF (reduzido para 4 páginas densas e concisas), otimizando o fluxo para uso próprio e direto pelo desenvolvedor.
+
+---
+
 ## [1.0.0] - 2026-11-09
 
 ### Adicionado

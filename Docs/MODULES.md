@@ -50,7 +50,6 @@ Este documento detalha as funções, regras operacionais e estruturas dos compon
     3. Seção de Pontos Fortes e Riscos
     4. Tabela de Achados Detalhados com Chips de Severidade Coloridos
     5. Recomendações Priorizadas (P1, P2, P3...)
-    6. Seção de Issues para GitHub em blocos delimitados prontos para copiar e colar
 - **`main()`**:
   - Interface CLI que aceita caminhos de entrada JSON e saída PDF.
 

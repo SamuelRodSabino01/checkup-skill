@@ -7,7 +7,7 @@ A skill `security-audit` foi projetada para atuar como um auditor sênior de seg
 1. **Verificação Factual Rigorosa**: É expressamente proibida a especulação ou alarme falso. Todo achado deve ter caminho do arquivo, número exato de linha, trecho de código e análise de explorabilidade.
 2. **Adaptação Contextual à Stack**: Antes da varredura, a skill identifica a stack completa (linguagem, framework, ORM, autenticação, frontend e infraestrutura/deploy) e traduz as vulnerabilidades para os padrões equivalentes daquela arquitetura.
 3. **Equilíbrio (Pontos Fortes vs. Riscos)**: Para provar a cobertura e profundidade da auditoria, a skill documenta tanto o que está vulnerável quanto o que foi examinado e validado como seguro.
-4. **Acionabilidade Imediata**: Toda vulnerabilidade acionável é convertida em uma issue completa pronta para o GitHub, com descrição, impacto, mitigação e checklist de critérios de aceite.
+4. **Foco Prático e Direto**: Voltada para resolução imediata pelo próprio desenvolvedor, entregando o diagnóstico detalhado no chat e o relatório executivo em PDF com recomendações priorizadas, sem necessidade de cerimônias de issues para o GitHub.
 5. **Geração Isolada de Relatório**: A geração do relatório executivo em PDF utiliza scripts autônomos que operam em ambiente isolado (virtualenv), preservando o sistema do usuário sem instalações globais.
 
 ## 3. Fluxo de Execução da Skill
@@ -30,10 +30,9 @@ A skill `security-audit` foi projetada para atuar como um auditor sênior de seg
         │
         ▼
 [Fase 4: Geração dos Artefatos]
-  ├─ Resumo e Tabela Linha a Linha no Chat
+  ├─ Resumo e Diagnóstico Linha a Linha no Chat
   ├─ Exportação dos Dados Estruturados (JSON)
-  ├─ Execução do Script Isolado de PDF (docs/security-audit/relatorio-auditoria-seguranca.pdf)
-  └─ Seção de Issues para GitHub com Checklist de Aceite
+  └─ Execução do Script Isolado de PDF (docs/security-audit/relatorio-auditoria-seguranca.pdf)
 ```
 
 ## 4. Estrutura de Diretórios
