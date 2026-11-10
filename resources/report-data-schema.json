@@ -1,0 +1,137 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SecurityAuditData",
+  "type": "object",
+  "required": [
+    "project_name",
+    "audit_date",
+    "scope",
+    "detected_stack",
+    "methodology_note",
+    "summary",
+    "strengths",
+    "weaknesses",
+    "findings",
+    "recommendations"
+  ],
+  "properties": {
+    "project_name": { "type": "string" },
+    "audit_date": { "type": "string" },
+    "scope": { "type": "string" },
+    "detected_stack": {
+      "type": "object",
+      "properties": {
+        "language": { "type": "string" },
+        "framework": { "type": "string" },
+        "orm_db": { "type": "string" },
+        "auth": { "type": "string" },
+        "frontend": { "type": "string" },
+        "deploy_infra": { "type": "string" }
+      }
+    },
+    "methodology_note": { "type": "string" },
+    "summary": {
+      "type": "object",
+      "required": ["critical", "high", "medium", "low", "informative", "total"],
+      "properties": {
+        "critical": { "type": "integer", "minimum": 0 },
+        "high": { "type": "integer", "minimum": 0 },
+        "medium": { "type": "integer", "minimum": 0 },
+        "low": { "type": "integer", "minimum": 0 },
+        "informative": { "type": "integer", "minimum": 0 },
+        "total": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "strengths": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["component", "evidence", "description"],
+        "properties": {
+          "component": { "type": "string" },
+          "evidence": { "type": "string" },
+          "description": { "type": "string" }
+        }
+      }
+    },
+    "weaknesses": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "category",
+          "severity",
+          "title",
+          "file_line",
+          "code_snippet",
+          "exploitability",
+          "description",
+          "mitigation"
+        ],
+        "properties": {
+          "id": { "type": "string" },
+          "category": {
+            "type": "string",
+            "enum": [
+              "Banco sem Tranca",
+              "Permissão no Navegador",
+              "IDOR",
+              "Chaves Expostas",
+              "Inputs sem Tratamento"
+            ]
+          },
+          "severity": {
+            "type": "string",
+            "enum": ["Crítica", "Alta", "Média", "Baixa", "Informativa"]
+          },
+          "title": { "type": "string" },
+          "file_line": { "type": "string" },
+          "code_snippet": { "type": "string" },
+          "exploitability": { "type": "string" },
+          "description": { "type": "string" },
+          "mitigation": { "type": "string" }
+        }
+      }
+    },
+    "recommendations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["priority", "title", "action", "target_findings"],
+        "properties": {
+          "priority": { "type": "string", "enum": ["P1", "P2", "P3", "P4"] },
+          "title": { "type": "string" },
+          "action": { "type": "string" },
+          "target_findings": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        }
+      }
+    },
+    "github_issues": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "issue_number",
+          "title",
+          "labels",
+          "body"
+        ],
+        "properties": {
+          "issue_number": { "type": "integer" },
+          "title": { "type": "string" },
+          "labels": { "type": "array", "items": { "type": "string" } },
+          "body": { "type": "string" }
+        }
+      }
+    }
+  }
+}
+

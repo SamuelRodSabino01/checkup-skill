@@ -1,0 +1,11 @@
+# Ambientes Virtuais e Dependências
+.venv_audit/
+.venv/
+venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# Arquivos temporários de inspeção
+docs/security-audit/preview_pages/
+
